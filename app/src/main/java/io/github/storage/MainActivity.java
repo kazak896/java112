@@ -166,7 +166,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //test
-
     private void getPolkas(Stillage stillage) {
         if (dialogPolkaList == null) {
             //setting bottom sheet dialog
