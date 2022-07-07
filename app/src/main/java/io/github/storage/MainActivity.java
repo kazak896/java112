@@ -117,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onItemClick(Product product) {
                     showToast("Стеллаж : " + product.getStillage_number() + "\nПолка : " + product.getPolka_number());
                 }
+
 //https://github.com/kazak896/java112.git
                 @Override
                 public void onDeleteClick(Product product, int position) {
@@ -179,9 +180,7 @@ public class MainActivity extends AppCompatActivity {
             bindingPolka.btnClose.setOnClickListener(v -> dialogPolkaList.dismiss());
             bindingPolka.btnSearch.setVisibility(View.INVISIBLE);
         }
-        bindingPolka.btnAdd.setOnClickListener(v -> {
-            polkaAdapter.addPolka(storageDb.addPolka(stillage.getNumber(), polkaAdapter.getLastNumber()));
-        });
+        bindingPolka.btnAdd.setOnClickListener(v -> polkaAdapter.addPolka(storageDb.addPolka(stillage.getNumber(), polkaAdapter.getLastNumber())));
         polkaAdapter.setOnItemClickListener(new PolkaAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(Polka polka) {
